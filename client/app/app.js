@@ -22,10 +22,12 @@ import accueil from './accueil/accueil.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
+import imgHeader from './directives/imgHeader/imgHeader.directive';
+
 import './app.less';
 
 angular.module('sophieReboulApp', [ngCookies, ngResource, ngSanitize, ngRoute, uiBootstrap, navbar,
-  footer, accueil, constants, util
+  footer, accueil, constants, util, imgHeader
 ])
   .config(routeConfig);
 
