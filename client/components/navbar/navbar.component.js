@@ -5,8 +5,14 @@ import angular from 'angular';
 
 export class NavbarComponent {
   menu = [{
-    title: 'Home',
-    link: '/'
+    title: 'La Gestalt thérapie en mots et sensations',
+    link: '/gestalt'
+  },{
+    title: 'Ma proposition',
+    link: '/proposition'
+  },{
+    title: 'Séance et tarifs',
+    link: '/seance'
   }];
 
   isCollapsed = true;
