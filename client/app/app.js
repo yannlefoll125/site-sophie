@@ -18,14 +18,14 @@ import {
 
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
-import main from './main/main.component';
+import accueil from './accueil/accueil.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
 import './app.less';
 
 angular.module('sophieReboulApp', [ngCookies, ngResource, ngSanitize, ngRoute, uiBootstrap, navbar,
-  footer, main, constants, util
+  footer, accueil, constants, util
 ])
   .config(routeConfig);
 

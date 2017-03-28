@@ -4,7 +4,7 @@ export function routeConfig($routeProvider, $locationProvider) {
   'ngInject';
 
   $routeProvider.otherwise({
-    redirectTo: '/'
+    redirectTo: '/accueil'
   });
 
   $locationProvider.html5Mode(true);
