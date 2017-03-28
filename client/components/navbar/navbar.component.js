@@ -13,6 +13,9 @@ export class NavbarComponent {
   },{
     title: 'Séance et tarifs',
     link: '/seance'
+  }, {
+    title: 'Contact',
+    link: '/contact'
   }];
 
   isCollapsed = true;
