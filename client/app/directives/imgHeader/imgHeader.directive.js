@@ -24,9 +24,9 @@ export default angular.module('siteSophieApp.imgHeader', [])
 				scope.resizeHeader();
 			});
 
-			header.css('width', '100%');
+			/*header.css('width', '100%');
 			header.css('background-repeat', 'no-repeat');
-			header.css('background-size', '100%');
+			header.css('background-size', '100%');*/
 			header.css('background-image', 'url("' + imageSrc + '")');
 			scope.resizeHeader();
 
