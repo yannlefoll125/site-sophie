@@ -30,23 +30,27 @@
  	background-color: @light-blue;
  }
 
- div.content-div {
- 	/*border: 1px solid black;*/
- 	background-color: white;
- }
+@content-div-width: 83%;
+@side-bar-margin-left: 2%;
+@side-bar-width: calc(100% - @content-div-width - @side-bar-margin-left);
 
  div.content-div {
 
+	background-color: white;
  	float: left;
  	padding: 0 @content-padding 0 @content-padding;
 
  	&.page-div {
- 		width: 83%;
+ 		width: @content-div-width;
  	}
 
  	&.side-bar {
- 		width: 15%;
- 		margin-left: 2%; 
+ 		width: @side-bar-width;
+ 		margin-left: @side-bar-margin-left; 
+ 	}
+
+ 	img {
+
  	}
  }
 
