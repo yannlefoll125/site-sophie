@@ -42,6 +42,8 @@
 -- sujet
 -- Message
 
+Manque l'adresse
+
 #Photos
 
 - Sur toutes les photos : "Crédit photo : Christophe François"
