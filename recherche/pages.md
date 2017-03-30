@@ -10,6 +10,8 @@
 
 - Définition de la Gestalt-Thérapie (approche la plus simple)
 
+Peut-être changer client -> patient dans le deuxième paragraphe ?
+
 ##Photos
 
 - Photo banc
