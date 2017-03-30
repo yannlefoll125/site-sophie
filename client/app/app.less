@@ -8,81 +8,109 @@
 @light-blue: #eaf2ff;
 @title-blue: #5e9af9;
 
-@content-padding: 2%;
-/**
- * App-wide Styles
- */
+@content-side-padding: 3.5%;
 
- .browserupgrade {
- 	margin: 0.2em 0;
- 	background: #ccc;
- 	color: #000;
- 	padding: 0.2em 0;
- }
+//App-wide Styles
 
- p {
- 	font-size: 17px;
- 	color: black;
- 	font-style: Arial, Helvetica, sans-serif;
- }
 
- body {
- 	background-color: @light-blue;
- }
+.browserupgrade {
+	margin: 0.2em 0;
+	background: #ccc;
+	color: #000;
+	padding: 0.2em 0;
+}
 
-@content-div-width: 83%;
-@side-bar-margin-left: 2%;
-@side-bar-width: calc(100% - @content-div-width - @side-bar-margin-left);
-
- div.content-div {
-
+div.navbar-custom {
 	background-color: white;
- 	float: left;
- 	padding: 0 @content-padding 0 @content-padding;
+	padding-left: @content-side-padding;
 
- 	&.page-div {
- 		width: @content-div-width;
- 	}
-
- 	&.side-bar {
- 		width: @side-bar-width;
- 		margin-left: @side-bar-margin-left; 
- 	}
-
- 	img {
-
- 	}
- }
-
- h1 {
- 	font-weight: bold;
- 	color: @title-blue;
- 	font-style: Arial, Helvetica, sans-serif;
- }
-
- div.navbar-custom {
- 	background-color: white;
- 	padding-left: @content-padding;
-
- 	a {
+	a {
 
 		font-size: 16px;
 
- 		&.navbar-brand {
+		&.navbar-brand {
 			font-weight: bold;
- 		}
+		}
 
- 	}
- }
+	}
+}
 
 
- /* inject:less */
- @import 'accueil/accueil';
- @import 'contact/contact';
- @import 'directives/imgHeader/imgHeader';
- @import 'gestalt/gestalt';
- @import 'proposition/proposition';
- @import 'seance/seance';
- @import '../components/footer/footer';
- @import '../components/modal/modal';
- /* endinject */
+@block-margin-bottom: 35px;
+
+
+
+
+
+
+body {
+	background-color: @light-blue;
+}
+
+@content-div-width: 75%;
+@side-bar-margin-left: 2%;
+@side-bar-width: calc(100% - @content-div-width - @side-bar-margin-left);
+
+@img-width: 100%;
+@img-margin-left: calc(50% - @img-width / 2);
+
+@h1-margin-bottom: 20px;
+
+div.content-div {
+
+	background-color: white;
+	float: left;
+	padding: 0 @content-side-padding 0 @content-side-padding;
+
+	&.page-div {
+		width: @content-div-width;
+	}
+
+	&.side-bar {
+		width: @side-bar-width;
+		margin-left: @side-bar-margin-left; 
+	}
+
+	img {
+		width: @img-width;
+		margin-left: @img-margin-left;
+		margin-bottom: @block-margin-bottom;
+
+	}
+
+	h1 {
+		font-weight: bold;
+		color: @title-blue;
+		font-style: Arial, Helvetica, sans-serif;
+		margin-bottom: @h1-margin-bottom;
+
+
+	}
+
+	p {
+		font-size: 17px;
+		line-height: 1.7;
+		font-style: Arial, Helvetica, sans-serif;
+		margin-bottom: @block-margin-bottom;
+	}
+
+	span.bold {
+		font-weight: bold;
+	}
+}
+
+
+
+
+
+
+/* inject:less */
+@import 'accueil/accueil';
+@import 'contact/contact';
+@import 'directives/imgHeader/imgHeader';
+@import 'gestalt/gestalt';
+@import 'proposition/proposition';
+@import 'seance/seance';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
+/* endinject */
