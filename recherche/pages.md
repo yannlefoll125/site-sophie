@@ -27,6 +27,8 @@ Peut-être changer client -> patient dans le deuxième paragraphe ?
 
 #Ma proposition
 
+Ce que je vous propose : premier paragraphe. Changer "je suis sur de l'accompagnement [...]" en "je vous propose de l'accompagnement [..]"
+
 ##Photos
 
 - Photo étoile de mer sur la plage
