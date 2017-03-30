@@ -87,8 +87,10 @@ div.content-div {
 
 	}
 
+	@normal-text-size: 17px;
+
 	p {
-		font-size: 17px;
+		font-size: @normal-text-size;
 		line-height: 1.7;
 		font-style: Arial, Helvetica, sans-serif;
 		margin-bottom: @block-margin-bottom;
@@ -96,6 +98,16 @@ div.content-div {
 
 	span.bold {
 		font-weight: bold;
+	}
+
+	ul {
+
+		&.contact-info {
+			list-style-type: none;
+			padding-left: 0;
+			width: 100%;
+			font-size: @normal-text-size;
+		}
 	}
 }
 
