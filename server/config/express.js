@@ -48,7 +48,7 @@ export default function(app) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     return next();
-  })
+  });
 
 
   // Persist sessions with MongoStore / sequelizeStore

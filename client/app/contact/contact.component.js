@@ -29,14 +29,14 @@ export class ContactComponent {
 
     if(form.$valid) {
       console.log("Form is valid");
-
+      this.sendEmail(this.values);
       //Resetting form
       this.values = {};
       form.$setPristine();
       form.$setUntouched();
       this.submitted = false;
 
-      this.sendEmail(this.values);
+      
       
 
     } else {
@@ -45,11 +45,13 @@ export class ContactComponent {
   }
 
   sendEmail(values) {
-    var headers = {
-      "Content-Type": "application/json"
-    }
+    var config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
 
-    this.$http.post("http://localhost:9000/contact", { headers: headers}).then(function(res) {
+    this.$http.post("http://localhost:9000/contact", JSON.stringify(values), config).then(function(res) {
       console.log("post success");
       console.log(res.data);
     }, function(res) {
