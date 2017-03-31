@@ -136,26 +136,44 @@ div.content-div {
 
 form.css-form {
 	input, textarea {
-		&.ng-invalid.ng-touched {
-			background-color: @input-invalid-background-color;
+		&.ng-touched, &.ng-submitted {
+			&.ng-invalid {
+				background-color: @input-invalid-background-color;
+			}
+
+			&.ng-valid {
+				background-color: @input-valid-background-color;
+			}
 		}
 
-		&.ng-valid.ng-touched {
-			background-color: @input-valid-background-color;
-		}
+		
 
 	}
 
 	p {
 		&.form-error-message {
 			line-height: 1;
-			margin-bottom: 3%;
+			margin-bottom: 25px;
 			padding-left: 2%;
 			color: @error-message-color;
 			font-weight: bold;
 		}
 	}
+
+	&.submitted {
+		input, textarea {
+			&.ng-invalid {
+				background-color: @input-invalid-background-color;
+			}
+
+			&.ng-valid {
+				background-color: @input-valid-background-color;
+			}
+		}
+		
+	}
 }
+
 
 
 
