@@ -2,7 +2,9 @@
 
 function checkValues(values) {
 
-	let p = new Promise(function(resolve, reject) {
+
+	return new Promise(function(resolve, reject) {
+
 		if(!values.name || !values.firstname || !values.email || !values.message) {
 			reject('Incorect values');
 		} else {
@@ -10,8 +12,6 @@ function checkValues(values) {
 		}
 	});
 
-	return p;
-	
 
 }
 
@@ -40,6 +40,11 @@ function send(res) {
 	return function(fValues) {
 		console.log('send()');
 		console.log(fValues);
+		<<<<<<< HEAD
+		=======
+		res.sendStatus(200);
+		return fValues;
+		>>>>>>> moving contact to service/contact using the same arch as api, with promises and shit
 	}
 }
 
