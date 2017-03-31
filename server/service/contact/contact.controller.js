@@ -2,6 +2,7 @@
 
 function checkValues(values) {
 
+
 	return new Promise(function(resolve, reject) {
 		if(!values.name || !values.firstname || !values.email || !values.message) {
 			reject('Incorect values');
@@ -37,8 +38,10 @@ function send(res) {
 	return function(fValues) {
 		console.log('send()');
 		console.log(fValues);
+
 		res.sendStatus(200);
 		return fValues;
+
 	}
 }
 
