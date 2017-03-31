@@ -44,6 +44,12 @@ export default function(app) {
   app.use(methodOverride());
   app.use(cookieParser());
 
+  app.use(function(req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    return next();
+  })
+
 
   // Persist sessions with MongoStore / sequelizeStore
   // We need to enable sessions for passport-twitter because it's an
@@ -64,9 +70,7 @@ export default function(app) {
    */
   if(env !== 'test' && !process.env.SAUCE_USERNAME) {
     app.use(lusca({
-      csrf: {
-        angular: true
-      },
+      csrf: false,
       xframe: 'SAMEORIGIN',
       hsts: {
         maxAge: 31536000, //1 year, in seconds
