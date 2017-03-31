@@ -114,8 +114,29 @@ div.content-div {
 
 		width: 90%;
 		
-		button.btn {
-			float: right;
+		input {
+
+
+			&.btn {
+				float: right;
+			}
+			
+			
+		}
+
+		
+
+	}
+}
+
+form.css-form {
+	input, textarea {
+		&.ng-invalid.ng-touched {
+			background-color: #FA787E;
+		}
+
+		&.ng-valid.ng-touched {
+			background-color: #78FA89;
 		}
 
 	}
@@ -129,6 +150,7 @@ div.content-div {
 /* inject:less */
 @import 'accueil/accueil';
 @import 'contact/contact';
+@import 'directives/form/labeledInput/labeledInput';
 @import 'directives/imgHeader/imgHeader';
 @import 'gestalt/gestalt';
 @import 'proposition/proposition';
