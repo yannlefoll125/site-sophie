@@ -13,7 +13,10 @@
   // All undefined asset or api routes should return a 404
 
   app.post('/contact', function(req, res) {
+
     console.log('received a POST request on /contact');
+    var data = req.data;
+    console.log(JSON.stringify(req.body));
     res.status(200);
     res.send('Got you');
   });
