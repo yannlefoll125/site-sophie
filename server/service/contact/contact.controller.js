@@ -26,21 +26,51 @@ function formatMail(res) {
 		console.log('formatMail with values');
 		console.log(values);
 
-		let formatedValues = {};
-		formatedValues.name = values.name;
-		formatedValues.firstname = values.firstname;
-		return formatedValues;
+		let mailOptions = {
+			from: 'y_lefoll@orange.fr',
+			to: 'y_lefoll@orange.fr',
+			subject: 'Message from: ' + values.email,
+			text: values.message
+		};
+
+		return mailOptions;
 		
 	}
 }
 
 function send(res) {
-	return function(fValues) {
+	return function(mailOptions) {
 		console.log('send()');
-		console.log(fValues);
+		console.log(mailOptions);
 
-		res.sendStatus(200);
-		return fValues;
+		let nodemailer = require('nodemailer');
+
+		let transporter = nodemailer.createTransport({
+			host: 'smtp.orange.fr',
+			port: 465,
+			secure: true,
+			authType: 'LOGIN',
+			auth: {
+				user: 'y_lefoll@orange.fr',
+				pass: "premier1"
+			},
+			tls: {
+				rejectUnauthorized: false
+			}
+		});
+
+
+		return new Promise(function(resolve, reject) {
+			transporter.sendMail(mailOptions, (error, info) => {
+				if(error) {
+					return reject(error);
+				}
+
+				res.sendStatus(200);
+
+				return resolve(info);
+			});
+		});
 
 	}
 }

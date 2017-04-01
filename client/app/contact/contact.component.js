@@ -20,6 +20,7 @@ export class ContactComponent {
   }
 
   onFormSubmit(form) {
+
     this.submitted = true;
 
 
@@ -29,14 +30,20 @@ export class ContactComponent {
 
     if(form.$valid) {
       console.log("Form is valid");
-      this.sendEmail(this.values);
-      //Resetting form
-      this.values = {};
-      form.$setPristine();
-      form.$setUntouched();
-      this.submitted = false;
+      this.sendEmail(this.values).then((res) => {
+        console.log("email sent, reset form");
+        this.values = {};
+        form.$setPristine();
+        form.$setUntouched();
+        this.submitted = false;
+        alert("Votre message a bien été envoyé !");
+      }, (error) => {
+        console.log('server Error');
+        alert('Le message n\'a pas pu être envoyé');
+      });
 
       
+
       
 
     } else {
@@ -51,12 +58,17 @@ export class ContactComponent {
       }
     };
 
-    this.$http.post("http://localhost:9000/contact", JSON.stringify(values), config).then(function(res) {
+    return this.$http.post("http://localhost:9000/contact", JSON.stringify(values), config);
+
+
+    /*.then(function(res) {
       console.log("post success");
-      console.log(res.data);
+      
     }, function(res) {
       console.log("post error");
-    })
+      this.serverError = res;
+
+    })*/
   }
 }
 
