@@ -483,6 +483,7 @@ gulp.task('build', cb => {
             'webpack:dist'
         ],
         'revReplaceWebpack',
+        'revReplaceIndex',
         cb);
 });
 
@@ -511,6 +512,12 @@ gulp.task('revReplaceWebpack', function() {
         .pipe(plugins.revReplace({manifest: gulp.src(`${paths.dist}/${paths.client.revManifest}`)}))
         .pipe(gulp.dest('dist/client'));
 });
+
+gulp.task('revReplaceIndex', function() {
+    return gulp.src('dist/client/index.html')
+        .pipe(plugins.revReplace({manifest: gulp.src(`${paths.dist}/${paths.client.revManifest}`)}))
+        .pipe(gulp.dest('dist/client'));
+})
 
 gulp.task('copy:extras', () => {
     return gulp.src([
