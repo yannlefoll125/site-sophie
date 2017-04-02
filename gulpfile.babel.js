@@ -19,7 +19,12 @@ import {Instrumenter} from 'isparta';
 import webpack from 'webpack-stream';
 import makeWebpackConfig from './webpack.make';
 
-var plugins = gulpLoadPlugins();
+var plugins = gulpLoadPlugins({
+    rename: {
+        'gulp-rev-css-url': 'revCss'
+    }
+});
+console.log(Object.keys(plugins));
 var config;
 
 const clientPath = 'client';
@@ -492,6 +497,7 @@ gulp.task('build:images', () => {
             plugins.imagemin.svgo({plugins: [{removeViewBox: false}]})
         ]))
         .pipe(plugins.rev())
+        .pipe(plugins.revCss())
         .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets/images`))
         .pipe(plugins.rev.manifest(`${paths.dist}/${paths.client.revManifest}`, {
             base: `${paths.dist}/${clientPath}/assets`,
