@@ -12,19 +12,7 @@ export default angular.module('siteSophieApp.imgHeader', [])
 			var ratio = attrs['ratio'];
 
 			var header = element.find('header');
-			var bottomDiv;
-			console.log(header.children());
-			angular.forEach(header.children(), function(el) {
-				if(el.id == 'bottom') {
-					bottomDiv = angular.element(el);
-					
-				}
-			});
-
-			console.log(bottomDiv);
-
-
-			
+			var bottomDiv = angular.element(document.getElementById('bottom'));
 
 			scope.resizeHeader = function() {
 				var headerWidth = header[0].clientWidth;
