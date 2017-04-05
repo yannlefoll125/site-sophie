@@ -12,11 +12,8 @@ export default angular.module('siteSophieApp.imgHeader', [])
 			let ratio = attrs['ratio'];
 
 			let header = element.find('header');
-			let bottomDiv = angular.element(document.getElementById('bottom'));
-			let rightDiv = angular.element(document.getElementById('right'));
+			//let bottomDiv = angular.element(document.getElementById('bottom'));
 
-			const bottomDivHeightRatio = 0.2;
-			const bottomDivHeightRatioComp = 1 - bottomDivHeightRatio;
 
 			scope.updateHeader = function() {
 				let headerWidth = header[0].clientWidth;
@@ -24,27 +21,13 @@ export default angular.module('siteSophieApp.imgHeader', [])
 
 				header.css('height', headerHeight + 'px');
 
+				/*
 				let bottomDivHeight = headerHeight * bottomDivHeightRatio;
 				bottomDiv.css('height', bottomDivHeight + 'px');
 				bottomDiv.css('font-size', 0.7 * bottomDivHeight + 'px');
-
-				
-				let rightDivHeight = rightDiv[0].clientHeight;
-
-				/*
-				if(headerHeight < rightDivHeight + bottomDivHeight) {
-					console.log(false);
-					scope.$apply(function() {
-						scope.showBottomDiv = false;
-					});
-					
-				} else {
-					console.log(true);
-					scope.$apply(function() {
-						scope.showBottomDiv = true;
-					});
-				}
 				*/
+
+
 			}
 
 			angular.element($window).on('resize', function() {
