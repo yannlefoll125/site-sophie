@@ -12,7 +12,8 @@ export default angular.module('siteSophieApp.imgHeader', [])
 			let ratio = attrs['ratio'];
 
 			let header = element.find('header');
-			//let bottomDiv = angular.element(document.getElementById('bottom'));
+			let bottomDiv = angular.element(document.getElementById('bottom'));
+			const bottomDivHeightRatio = 0.2;
 
 
 			scope.updateHeader = function() {
@@ -21,11 +22,11 @@ export default angular.module('siteSophieApp.imgHeader', [])
 
 				header.css('height', headerHeight + 'px');
 
-				/*
+				
 				let bottomDivHeight = headerHeight * bottomDivHeightRatio;
 				bottomDiv.css('height', bottomDivHeight + 'px');
 				bottomDiv.css('font-size', 0.7 * bottomDivHeight + 'px');
-				*/
+				
 
 
 			}
