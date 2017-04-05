@@ -9,6 +9,7 @@ header.img-header {
 
 	div#right {
 		float: right;
+		width: 100%
 	}
 
 
@@ -20,6 +21,69 @@ header.img-header {
 		
 
 	}
+	
+	#title {
+		width: 100%;
+		text-align: center;
+
+		//Common config
+		span {
+			&#sophie {
+
+			}
+
+			&#gestalt {
+				font-style: italic;
+			}
+		}
 
 
+		//Small screen
+		span {
+			
+			&#sophie {
+				font-size: 25px;
+			}
+
+
+			&#gestalt {
+				font-size: 20px;
+				margin-left: 8px;
+			}
+		}
+
+		
+		//Large screen
+		@media (min-width: 768px) {
+			span {
+				display: block;
+
+				&#sophie {
+					font-size: 35px;
+
+				}
+
+				&#gestalt {
+					font-size: 26px;
+					
+					margin-left: 0;
+				}
+				
+				
+			}
+
+		}
+
+		
+
+
+	}
+
+	h2#gestalt {
+		font-size: 17px;
+	}
+
+	p#tel {
+		font-size: 16px;
+	}
 }
