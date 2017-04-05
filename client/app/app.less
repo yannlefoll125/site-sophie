@@ -9,6 +9,7 @@
 @title-blue: #5e9af9;
 
 @content-side-padding: 3.5%;
+@content-top-padding: 10px;
 
 //App-wide Styles
 
@@ -38,11 +39,6 @@ div.navbar-custom {
 
 @block-margin-bottom: 35px;
 
-
-
-
-
-
 body {
 	background-color: @light-blue;
 }
@@ -58,18 +54,9 @@ body {
 
 div.content-div {
 
+	//Common
 	background-color: white;
-	float: left;
-	padding: 0 @content-side-padding 0 @content-side-padding;
-
-	&.page-div {
-		width: @content-div-width;
-	}
-
-	&.side-bar {
-		width: @side-bar-width;
-		margin-left: @side-bar-margin-left; 
-	}
+	padding: @content-top-padding @content-side-padding 0 @content-side-padding;
 
 	img {
 		width: @img-width;
@@ -113,20 +100,35 @@ div.content-div {
 	div.contact-form-div {
 
 		width: 90%;
-		
+
 		input {
 
 
 			&.btn {
 				float: right;
 			}
-			
-			
+
 		}
 
-		
-
 	}
+
+	//Small screen
+
+	//Big screen
+	@media (min-width: 768px) {
+		float: left;
+		&.page-div {
+			width: @content-div-width;
+		}
+
+		&.side-bar {
+			width: @side-bar-width;
+			margin-left: @side-bar-margin-left; 
+		}
+	}
+
+
+	
 }
 
 @input-invalid-background-color: #ffbabd;
@@ -146,7 +148,7 @@ form.css-form {
 			}
 		}
 
-		
+
 
 	}
 
@@ -170,7 +172,7 @@ form.css-form {
 				background-color: @input-valid-background-color;
 			}
 		}
-		
+
 	}
 }
 
