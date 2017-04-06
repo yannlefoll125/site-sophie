@@ -82,6 +82,7 @@ div.content-div {
 		line-height: 1.7;
 		font-style: Arial, Helvetica, sans-serif;
 		margin-bottom: @block-margin-bottom;
+		text-align: justify;
 
 		&.smallText {
 			font-size: @small-text-size;
@@ -133,6 +134,31 @@ div.content-div {
 		}
 	}
 
+
+	div.textWrappingImage {
+		
+
+		div.imageDiv {
+			width: 40%;
+			float: right;
+			margin-left: 2%;
+			margin-bottom: 0px;
+			margin-top: 8px;
+
+			img {
+				margin: 0 auto;
+			}
+		}
+
+		@media (max-width: 768px) {
+			div.imageDiv {
+				float: none;
+				width: 80%;
+				margin: 0 auto;
+				margin-bottom: 20px;
+			}
+		}
+	}
 
 	
 }
