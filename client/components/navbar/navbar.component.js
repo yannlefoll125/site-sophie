@@ -8,6 +8,9 @@ export class NavbarComponent {
     title: 'La Gestalt-Thérapie en mots et sensations',
     link: '/gestalt'
   },{
+    title: 'Autres thérapies utilisées',
+    link: '/autres'
+  },{
     title: 'Ma proposition',
     link: '/proposition'
   },{

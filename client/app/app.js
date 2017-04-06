@@ -26,13 +26,14 @@ import gestalt from './gestalt/gestalt.component';
 import proposition from './proposition/proposition.component';
 import seance from './seance/seance.component';
 import contact from './contact/contact.component';
+import autres from './autres/autres.component';
 
 import imgHeader from './directives/imgHeader/imgHeader.directive';
 
 import './app.less';
 
 angular.module('sophieReboulApp', [ngCookies, ngResource, ngSanitize, ngRoute, uiBootstrap, navbar,
-  footer, accueil, constants, util, imgHeader, gestalt, proposition, seance, contact
+  footer, accueil, constants, util, imgHeader, gestalt, proposition, seance, contact, autres
 ])
   .config(routeConfig);
 
