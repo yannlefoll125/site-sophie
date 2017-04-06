@@ -75,12 +75,18 @@ div.content-div {
 	}
 
 	@normal-text-size: 17px;
+	@small-text-size: 12px;
 
 	p {
 		font-size: @normal-text-size;
 		line-height: 1.7;
 		font-style: Arial, Helvetica, sans-serif;
 		margin-bottom: @block-margin-bottom;
+
+		&.smallText {
+			font-size: @small-text-size;
+			font-weight: bold;
+		}
 	}
 
 	span.bold {
