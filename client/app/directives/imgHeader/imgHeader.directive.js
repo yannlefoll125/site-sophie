@@ -36,6 +36,12 @@ export default angular.module('siteSophieApp.imgHeader', [])
 
 			});
 
+			scope.$watch(attrs['imageSrc'], function(newValue) {
+				console.log('imageHeader dir: attr changed:' + newValue);
+				imageSrc = newValue;
+				header.css('background-image', 'url("' + imageSrc + '")');
+			})
+
 			/*header.css('width', '100%');
 			header.css('background-repeat', 'no-repeat');
 			header.css('background-size', '100%');*/

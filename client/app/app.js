@@ -28,12 +28,14 @@ import seance from './seance/seance.component';
 import contact from './contact/contact.component';
 import autres from './autres/autres.component';
 
+import pageController from './pageController/pageController.controller';
+
 import imgHeader from './directives/imgHeader/imgHeader.directive';
 
 import './app.less';
 
 angular.module('sophieReboulApp', [ngCookies, ngResource, ngSanitize, ngRoute, uiBootstrap, navbar,
-  footer, accueil, constants, util, imgHeader, gestalt, proposition, seance, contact, autres
+  footer, accueil, constants, util, imgHeader, gestalt, proposition, seance, contact, autres, pageController
 ])
   .config(routeConfig);
 

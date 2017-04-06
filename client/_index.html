@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-controller="PageController as PageCtrl">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,12 +25,14 @@
         ga('send', 'pageview');
       </script>
 
-      <img-header image-src="../assets/images/header.jpg" ratio="0.2"></img-header>
+      
+      <img-header image-src="PageCtrl.headerImageUrl" ratio="0.19"></img-header>
 
       <navbar></navbar>
       <div class="view-div">
 
         <div class="container">
+
 
           <div class="row">
             <div class="page-div content-div">
@@ -42,7 +44,6 @@
             <div class="side-bar content-div">
               <div class="contact-div">
                 <h3>Informations</h3>
-
                 <ul class="contact-info">
                   <li>Sophie Reboul</li>
                   <li>Gestalt-Thérapeute</li>
