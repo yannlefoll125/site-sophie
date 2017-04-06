@@ -18,3 +18,15 @@ Manque 2 ou 3 mots/expressions en gras
 ##Ce que je vous propose, 3e paragraphe
 
 J'ai enlevé la mise en page sous forme de puces, je trouvais que ça cassait trop le rythme de lecture. Pour mettre en avant les idée, on pourrait envisager de mettre en gras certaines des idées.
+
+##Dernier paragraphe
+
+"va être" -> "sera"
+
+#Séance et tarif
+
+##Paragraphe "Praticienne en Reïki..."
+
+A reformuler je pense. Un peu le même problème que pour l'accueil avec "convaincue".
+
+Une solution serait de ne pas mettre le paragraphe, mais à la place faire un lien vers la page "Autres thérapies..." 
