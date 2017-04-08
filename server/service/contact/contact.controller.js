@@ -29,7 +29,7 @@ function formatMail(res) {
 		console.log(values);
 
 		let mailOptions = {
-			from: 'y_lefoll@orange.fr',
+			from: 'contact@la-therapie-de-sophie.fr',
 			to: 'y_lefoll@orange.fr',
 			subject: 'Message from: ' + values.email,
 			text: values.message
@@ -47,7 +47,7 @@ function send(res) {
 
 		let nodemailer = require('nodemailer');
 
-		let transporter = nodemailer.createTransport({
+		const orange = {
 			host: 'smtp.orange.fr',
 			port: 465,
 			secure: true,
@@ -59,7 +59,23 @@ function send(res) {
 			tls: {
 				rejectUnauthorized: false
 			}
-		});
+		};
+
+		const ovh = {
+			host: 'ssl0.ovh.net',
+			port: 465,
+			secure: true,
+			authType: 'LOGIN',
+			auth: {
+				user: 'contact@la-therapie-de-sophie.fr',
+				pass: "therapiedesophie"
+			},
+			tls: {
+				rejectUnauthorized: false
+			}
+		}
+
+		let transporter = nodemailer.createTransport(ovh);
 
 
 		return new Promise(function(resolve, reject) {
