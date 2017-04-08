@@ -1,6 +1,13 @@
 @import '~bootstrap/less/bootstrap.less';
 @import '~font-awesome/less/font-awesome.less';
 
+//Override bootstrap variables
+@screen-sm: 768px;
+@screen-sm-min: @screen-sm;
+@grid-float-breakpoint: 768px;
+//End of boostrap override
+
+
 @icon-font-path: '/assets/fonts/bootstrap/';
 @fa-font-path: '/assets/fonts/font-awesome/';
 
@@ -124,7 +131,7 @@ div.content-div {
 	//Small screen
 
 	//Big screen
-	@media (min-width: 768px) {
+	@media (min-width: @screen-sm) {
 		float: left;
 		&.page-div {
 			width: @content-div-width;
@@ -152,7 +159,7 @@ div.content-div {
 			}
 		}
 
-		@media (max-width: 768px) {
+		@media (max-width: @screen-sm) {
 			div.imageDiv {
 				float: none;
 				width: 80%;
@@ -227,4 +234,5 @@ form.css-form {
 @import 'seance/seance';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
+@import '../components/navbar/navbar';
 /* endinject */

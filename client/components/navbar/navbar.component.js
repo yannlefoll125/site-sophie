@@ -5,10 +5,10 @@ import angular from 'angular';
 
 export class NavbarComponent {
   menu = [{
-    title: 'La Gestalt-Thérapie en mots et sensations',
+    title: 'La Gestalt-Thérapie',
     link: '/gestalt'
   },{
-    title: 'Autres thérapies utilisées',
+    title: 'Autres thérapies',
     link: '/autres'
   },{
     title: 'Ma proposition',
