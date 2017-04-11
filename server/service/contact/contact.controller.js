@@ -28,11 +28,27 @@ function formatMail(res) {
 		console.log('formatMail with values');
 		console.log(values);
 
+
+		let message = 'Message envoyé par ' + values.firstname + ' ' + values.name + '\n';
+		message += 'Nom:' + values.name + '\n';
+		message += 'Prénom: ' + values.firstname + '\n';
+		message += 'e-mail: ' + values.email + '\n';
+
+		if(!!values.tel) {
+			message += 'tel: ' + values.tel + '\n';
+		}
+
+		message += 'Message: \n\n';
+		message += values.message + '\n\n';
+		//message += 'Ce message a été généré automatiquement à partir des informations du formulaire de la page contact. L\'adresse e-mail de réponse est celle spécifiée par l\'utilisateur.';
+		
+
+
 		let mailOptions = {
 			from: 'contact@la-therapie-de-sophie.fr',
 			to: 'y_lefoll@orange.fr',
-			subject: 'Message from: ' + values.email,
-			text: values.message
+			subject: '[La Thérapie de Sophie] Message de ' + values.firstname + ' ' + values.name,
+			text: message
 		};
 
 		return mailOptions;
