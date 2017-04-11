@@ -18,7 +18,10 @@ function checkValues(values) {
 function handleError(res) {
 	return function(reason) {
 		console.log("Error reason: " + reason);
-		res.sendStatus(400).end();
+		let error = {
+			message: reason
+		};
+		res.status(400).json(error);
 	}
 }
 

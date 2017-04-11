@@ -38,8 +38,10 @@ export class ContactComponent {
         this.submitted = false;
         alert("Votre message a bien été envoyé !");
       }, (error) => {
+        let message = error.data.message;
         console.log('server Error');
-        alert('Le message n\'a pas pu être envoyé');
+        console.log(message)
+        alert('Le message n\'a pas pu être envoyé. Raison de l\'erreur : \n' + message);
       });
 
       
