@@ -1,0 +1,9 @@
+{
+	"apps": [{
+		"name": "site-sophie",
+		"script": "./server/index.js",
+		"env": {
+			"NODE_ENV": "production"
+		}
+	}]
+}

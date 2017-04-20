@@ -24,7 +24,7 @@ var plugins = gulpLoadPlugins({
         'gulp-rev-css-url': 'revCss'
     }
 });
-console.log(Object.keys(plugins));
+
 var config;
 
 const clientPath = 'client';
@@ -480,6 +480,8 @@ gulp.task('build', cb => {
             'copy:assets',
             'copy:fonts:dist',
             'copy:server',
+            'copy:pm2',
+            'copy:nginx',
             'webpack:dist'
         ],
         'revReplaceWebpack',
@@ -566,6 +568,16 @@ gulp.task('copy:server', () => {
     return gulp.src([
         'package.json'
     ], {cwdbase: true})
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy:pm2', () => {
+    return gulp.src('pm2-config.json')
+        .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('copy:nginx', () => {
+    return gulp.src('nginx')
         .pipe(gulp.dest(paths.dist));
 });
 
