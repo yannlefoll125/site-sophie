@@ -26,7 +26,6 @@ export default angular.module('siteSophieApp.imgHeader', [])
 				let bottomDivHeight = headerHeight * bottomDivHeightRatio;
 				bottomDiv.css('height', bottomDivHeight + 'px');
 				bottomDiv.css('font-size', 0.7 * bottomDivHeight + 'px');
-				
 
 
 			}
