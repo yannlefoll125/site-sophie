@@ -49,7 +49,7 @@ function formatMail(res) {
 
 		let mailOptions = {
 			from: 'contact@la-therapie-de-sophie.fr',
-			to: 'y_lefoll@orange.fr',
+			to: 'zouf.reboul@gmail.com',
 			subject: '[La Thérapie de Sophie] Message de ' + values.firstname + ' ' + values.name,
 			text: message
 		};

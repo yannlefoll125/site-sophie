@@ -9,12 +9,13 @@ export class ContactComponent {
   /*@ngInject*/
   constructor($http) {
     this.submitted = false;
-    this.values = {
+    /*this.values = {
       name: "testname",
       firstname: "firstname",
       email: "email@email.com",
       message: "message"
-    };
+    };*/
+    this.values = {};
     this.$http = $http;
 
   }
