@@ -7,12 +7,21 @@ import routes from './contact.routes';
 
 export class ContactComponent {
   /*@ngInject*/
-  constructor() {
+  constructor($http) {
     this.submitted = false;
+    /*this.values = {
+      name: "testname",
+      firstname: "firstname",
+      email: "email@email.com",
+      message: "message"
+    };*/
     this.values = {};
+    this.$http = $http;
+
   }
 
   onFormSubmit(form) {
+
     this.submitted = true;
 
 
@@ -22,19 +31,51 @@ export class ContactComponent {
 
     if(form.$valid) {
       console.log("Form is valid");
+      this.sendEmail(this.values).then((res) => {
+        console.log("email sent, reset form");
+        this.values = {};
+        form.$setPristine();
+        form.$setUntouched();
+        this.submitted = false;
+        alert("Votre message a bien été envoyé !");
+      }, (error) => {
+        let message = error.data.message;
+        console.log('server Error');
+        console.log(message)
+        alert('Le message n\'a pas pu être envoyé. Raison de l\'erreur : \n' + message);
+      });
 
-      //Resetting form
-      this.values = {};
-      form.$setPristine();
-      form.$setUntouched();
-      this.submitted = false;
+      
+
       
 
     } else {
       console.log("Form is invalid");
     }
   }
+
+  sendEmail(values) {
+    var config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+
+    return this.$http.post("http://localhost:9000/contact", JSON.stringify(values), config);
+
+
+    /*.then(function(res) {
+      console.log("post success");
+      
+    }, function(res) {
+      console.log("post error");
+      this.serverError = res;
+
+    })*/
+  }
 }
+
+//ContactComponent.$inject = ['$http', '$cookie'];
 
 export default angular.module('siteSophieApp.contact', [ngRoute])
 .config(routes)
